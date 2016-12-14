@@ -5,6 +5,9 @@ Also it uses MongoDB as a data storage.
 
 It is single page application that uses API for data manipulation.
 
+# Requirements
+MongoDB, PHP MongoDB driver (http://php.net/manual/ru/set.mongodb.php), a smile on your face (:
+
 # Usage
 ## Install
 1. Clone the project from github.
