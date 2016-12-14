@@ -1,5 +1,0 @@
-{
-  "config": {
-    "mongodb": "mongodb://localhost:27017"
-  }
-}
