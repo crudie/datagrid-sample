@@ -60,7 +60,7 @@ function DatagridViewModel() {
     self.filteredTransactions = ko.observableArray();
     self.chosenTransaction = ko.observable();
 
-    // Compute non-deleted transactions
+    // Compute visible transactions
     self.currentTransactions = ko.computed(function () {
         return self.filteredTransactions().length === 0 ? self.transactions() : self.filteredTransactions();
     });
@@ -72,7 +72,7 @@ function DatagridViewModel() {
         });
     });
 
-    // Compute current balance
+    // Compute visible transactions balance
     self.currentBalance = ko.computed(function () {
         var total = 0;
 
@@ -113,7 +113,6 @@ function DatagridViewModel() {
     self.showGrid = function () {
         self.chosenTransaction(null);
     };
-
 
     // Get view template for transaction depends on field type
     self.getViewTemplate = function (field, bindingContext) {
@@ -208,8 +207,6 @@ function DatagridViewModel() {
                 }
 
                 validationModel[column.name()] = ko.observable(value).extend(requirements);
-                console.log(value);
-                console.log(ko.observable(value).extend(requirements).isValid());
             }
         }
 
@@ -283,6 +280,5 @@ function DatagridViewModel() {
 
     self.loadData();
 }
-
 
 ko.applyBindings(new DatagridViewModel());

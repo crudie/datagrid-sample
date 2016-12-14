@@ -1,14 +1,13 @@
 <?php
 
-use Symfony\Component\HttpFoundation\Request;
+use Lokhman\Silex\Provider\ConfigServiceProvider;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new Silex\Application();
+$app['env'] = 'prod';
 
-$app['env'] = 'dev';
-$app['debug'] = true;
-
+$app->register(new ConfigServiceProvider(__DIR__ . '/../config', [], 'app'));
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
@@ -18,7 +17,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 // Define services and repo
 $app['service.mongo'] = function () use ($app) {
-    return new \MongoDB\Client();
+    return new \MongoDB\Client($app['config']['mongodb']);
 };
 
 $app['repository.user'] = function () use ($app) {

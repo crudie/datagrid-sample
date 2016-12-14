@@ -2,11 +2,8 @@
 
 namespace Main\Controller;
 
-
 use Main\Form\Handler\TransactionFormHandler;
-use Main\Form\TransactionType;
 use Main\Model\Transaction;
-use Main\Model\User;
 use Main\Repository\TransactionRepository;
 use Main\Transformer\JsonFormErrorTransformer;
 use Main\Transformer\JsonTransactionTransformer;
@@ -14,6 +11,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * Transactions controller
+ */
 class TransactionController
 {
     /**
@@ -45,8 +45,8 @@ class TransactionController
     public function listAction()
     {
         $this->formHandler->setData(new Transaction());
-        $form = $this->formHandler->getForm();
 
+        $form = $this->formHandler->getForm();
         $formFields = $form->all();
         $columns = [];
 

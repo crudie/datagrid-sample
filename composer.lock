@@ -4,9 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c5a500458bdb7e6f5c52bdd6d7e28bd0",
-    "content-hash": "530bfd3d628c88d0c326d9475f490297",
+    "hash": "cef72955e3f6676198b58b9c4e68dbfa",
+    "content-hash": "11226cac9c0280132d6a7e2b91a775e0",
     "packages": [
+        {
+            "name": "lokhman/silex-config",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lokhman/silex-config.git",
+                "reference": "2e432b7b9d0247e98915ce887157a915d924ecb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lokhman/silex-config/zipball/2e432b7b9d0247e98915ce887157a915d924ecb6",
+                "reference": "2e432b7b9d0247e98915ce887157a915d924ecb6",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lokhman\\Silex\\Provider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Lokhman",
+                    "email": "alex.lokhman@gmail.com"
+                }
+            ],
+            "description": "Simple JSON configuration provider for Silex micro-framework",
+            "keywords": [
+                "config",
+                "json",
+                "provider",
+                "silex"
+            ],
+            "time": "2016-08-30 10:32:59"
+        },
         {
             "name": "mongodb/mongodb",
             "version": "1.0.4",

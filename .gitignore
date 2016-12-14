@@ -3,7 +3,10 @@
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
+
+# My own
 .idea
+config/app.json
 
 # Email spool folder
 /app/spool/*
@@ -42,8 +45,9 @@
 # Build data
 /build/
 
-# Composer PHAR
+# Composer
 /composer.phar
+/composer.lock
 
 # Backup entities generated with doctrine:generate:entities command
 */Entity/*~
